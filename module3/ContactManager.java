@@ -12,7 +12,7 @@ public class ContactManager {
         contacts.put("Danielle Stroe", new Contact("Danielle Stroe", "+1 412 434 3433"));
         contacts.put("Brady Bennett", new Contact("Brady Bennett", "+1 412 232 4332"));
         contacts.put("Louis Grant", new Contact("Louis Grant", "+1 617 555 0105"));
-
+        printContacts(contacts);
         // Step 5: look up a contact by name
         String findByName = "Ram Eati";
         Contact found = contacts.get(findByName);
@@ -26,6 +26,7 @@ public class ContactManager {
         // Test with a name that does not exist
         String missingName = "Anthony Deg";
         Contact missing = contacts.get(missingName);
+        System.out.println("Attempting to remove a contact that doesn't exist: Anthony Deg");
         if (missing == null) {
             System.out.println("Lookup Result for "+missingName+" contact not found.");
         } else {
@@ -35,13 +36,15 @@ public class ContactManager {
 
         // Step 6: print sorted list
         printContacts(contacts);
-
         // Step 7: remove a contact
+        
         String nameToRemove = "Ram Eati";
+        System.out.println("Attempting to remove a contact that exists: "+nameToRemove);
         removeContact(contacts, nameToRemove);
-
         // Try removing a name that doesn't exist, to test the not-found case
+   
         removeContact(contacts, "Ram Eati");
+        System.out.println("Attempting to add a new contact. ");
         addContact(contacts, "Ada Lovelace", "+1 999 555 0000");
         // Step 8: print sorted list after removing the contact.
 
@@ -52,7 +55,7 @@ public class ContactManager {
         updatedsortedlist.sort((a, b) -> a.getName().compareTo(b.getName()));
 
         System.out.println("\n");
-        System.out.println("=== Contacts ===");
+        System.out.println("=== Sorted Contacts ===");
         for (Contact c : updatedsortedlist) {
             System.out.println(c);
         }
@@ -64,14 +67,14 @@ public class ContactManager {
             System.out.println("Cannot add - contact already exists: " + name);
         } else {
             contacts.put(name, new Contact(name, phone));
-            System.out.println("Added: " + name + " | " + phone);
+            System.out.println("New contact added: " + name + " | " + phone);
         }
     }
 
     public static void removeContact(HashMap<String, Contact> contacts, String name) {
         Contact removed = contacts.remove(name);
         if (removed == null) {
-            System.out.println("Cannot remove - contact not found: " + name);
+            System.out.println("contact not found: " + name);
         } else {
             System.out.println("Removed: " + removed);
         }

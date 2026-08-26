@@ -5,4 +5,4 @@
 - Learned the compile-run cycle
 - First Java program: Hello World
 
-- This file is from the branch - feature/add-module4-notes.
+- This file is from the main branch.

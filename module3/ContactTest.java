@@ -12,7 +12,7 @@ public class ContactTest {
   } 
     @Test
   void getName_returnsCorrectName() {
-    assertEquals("Ada Lovelace1", contact.getName());
+    assertEquals("Ada Lovelace", contact.getName());
   } 
  
   @Test
