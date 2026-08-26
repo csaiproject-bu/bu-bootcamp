@@ -12,4 +12,4 @@ Online AI Programs CS Foundations Bootcamp.
 - module6/ : c-programming
  
 ## Programs
-Each module folder contains the Java source files from that module’s activity
+Each module folder contains the Java source files from that module’s activity.
